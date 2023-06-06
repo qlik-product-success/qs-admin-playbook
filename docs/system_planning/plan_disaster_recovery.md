@@ -24,7 +24,7 @@ Benefits:
 
 ## Goal
 {:.no_toc}
-The goal of this activity is to plan and review the organization's disaster recovery plan. This ensures that the organization can recover from disaster situations and allows the Qlik site to align with the organizational goals of resiliency.
+The goal of this activity is to plan and review the organization's disaster recovery plan. This ensures that the organization can recover from disaster situations and allows the Qlik site to align with the organizational goals of resiliency. 
 
 ## Table of Contents
 {:.no_toc}
