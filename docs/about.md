@@ -8,7 +8,7 @@ permalink: docs/about
 # About
 {: .no_toc }
 
-The _Qlik Sense Admin Playbook_ is designed and intended to be a repository of best practices for a Qlik Administrator to reference. It is maintained by the Americas Enterprise Architecture team at Qlik. The Playbook covers many activities and exercises that help to maintain a high-performing and easily manageable site.
+The _Qlik Sense Admin Playbook_ is designed and intended to be a repository of best practices for a Qlik Sense Enterpirse on Windows administrator to reference. The Playbook covers many activities and exercises that help to maintain a high-performing and easily manageable Qlik Sense site.
 
 {::options parse_block_html="true" /}
 <div class="card">
@@ -29,7 +29,7 @@ The _Qlik Sense Admin Playbook_ is designed and intended to be a repository of b
 <i class="fas fa-exclamation-triangle fa-sm"></i> Scope
 </div>
 <div class="card-body">
-<p>Since the goal of this repository is to present best practices, it will not be effective as a <i>troubleshooting</i> guide. Practically, if a particular Qlik site is experiencing stability issues then this repository is unlikely to be effective in stabilizing the environment. That being said, faithful adherence to the guidance in this playbook will reduce the probability that a given environment will experience stability issues by reducing assets and qualifying problematic assets.
+<p>Since the goal of this repository is to present best practices, it may not be effective as a general <i>troubleshooting</i> guide. Practically, if a particular Qlik site is experiencing stability issues then this repository is unlikely to be effective in stabilizing the environment. That being said, faithful adherence to the guidance in this playbook will reduce the probability that a given environment will experience stability issues by reducing assets and qualifying problematic assets.
 </p>
 </div>
 </div>
@@ -40,7 +40,7 @@ The _Qlik Sense Admin Playbook_ is designed and intended to be a repository of b
 <i class="fas fa-hands-helping fa-sm"></i> Site Support
 </div>
 <div class="card-body">
-<p>If there are requests for additional enhancements of the site, including additional documentation or coverage, or if something isn't working as expected, please submit an issue on GitHub [here](https://github.com/eapowertools/qs-admin-playbook/issues).</p>
+<p>If there are requests for additional enhancements of the site, including additional documentation or coverage, or if something isn't working as expected, please submit an issue on GitHub [here](https://github.com/qlik-product-success/qs-admin-playbook/issues).</p>
 </div>
 </div>
 
@@ -49,17 +49,11 @@ The _Qlik Sense Admin Playbook_ is designed and intended to be a repository of b
 
 The cadence of the activities shown on the Playbook itself are common, yet they will not fit every organization, or might fit an organization for a period, and then shift. It is encouraged to work through the Playbook at the recommended starting cadence and adapt the Playbook of each organization's deployment. Some activities may be more or less useful / relevant for an organization, so review the outcomes and make appropriate adjustments. There is no "one size fits all" solution, as every organization has different needs and faces challenges that evolve over time.
 
-### Customization
-
-Give that the Playbook doesn't currently support customization via the web interface, a Qlik Application has been created that can load in a csv of the Playbook's itinerary, and can be customized within Qlik--linking live back to the site.
-
-Find the Playbook qvf and associated xlsx [here](https://github.com/eapowertools/qs-admin-playbook/tree/master/attachments/custom_app).
-
 ## Icons Used Throughout the Site
 
 ### Tooling <i class="fas fa-tools fa-xs"></i>
 
-This icon is used to denote that the section either requires or is a tool that has been created that is not directly supported by Qlik. Many of them are simply qvf files with minimal configuration, but others involve custom installers, etc. Documentation is provided for all tools referenced, and all repositories, at the time that this was written, are currently active and supported by their owners--many of whom work for Qlik.
+This icon is used to denote that the section either requires or is a tool that has been created that is not directly supported by Qlik. Many of them are simply QVF files with minimal configuration, but others involve custom installers, etc. Documentation is provided for all tools referenced, and all repositories, at the time that this was written, are currently active and supported by their owners--many of whom work for Qlik.
 
 {::options parse_block_html="true" /}
 <div class="card">
