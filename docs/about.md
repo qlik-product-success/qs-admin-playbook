@@ -8,7 +8,7 @@ permalink: docs/about
 # About
 {: .no_toc }
 
-The _Qlik Sense Admin Playbook_ is designed and intended to be a repository of best practices for a Qlik Sense Enterpirse on Windows administrator to reference. The Playbook covers many activities and exercises that help to maintain a high-performing and easily manageable Qlik Sense site.
+The _Qlik Sense Admin Playbook_ is designed and intended to be a repository of best practices for a Qlik Sense Enterprise on Windows administrator to reference. The Playbook covers many activities and exercises that help to maintain a high-performing and easily manageable Qlik Sense site.
 
 {::options parse_block_html="true" /}
 <div class="card">
