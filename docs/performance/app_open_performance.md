@@ -5,7 +5,8 @@ nav_order: 1
 parent: Performance
 ---
 
-# App Open Performance - COMING SOON<i class="fas fa-tools fa-xs" title="Tooling | Pre-Built Solutions"></i> <i class="fas fa-file-code fa-xs" title="API | Script Optional"></i>*
+# App Open Performance <i class="fas fa-tools fa-xs" title="Tooling | Pre-Built Solutions"></i> 
+
 {:.no_toc}
 
 **Cadence** <span class="label cadence">Ad-hoc</span>
@@ -14,7 +15,7 @@ parent: Performance
 
 |                                  		                      | Initial    | Recurring   |
 |-----------------------------------------------------------|------------|-------------|
-| <i class="far fa-clock fa-sm"></i> **Estimated Time**     | NN min     | NN min      |
+| <i class="far fa-clock fa-sm"></i> **Estimated Time**     | 60 min     | 60 min      |
 
 Benefits:
 
