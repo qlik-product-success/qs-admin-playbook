@@ -43,7 +43,7 @@ There are many things to consider when investigate app open performance times. W
 
 A more precise way of analyzing this is to look at the websocket traffic between the client and the engine. The first call the client makes when connecting to the engine is typically to make a request to open a specifc app. The following image shows a case where the call to the method "OpenDoc" is at the very first row of the communication. The response to this call can be found at row four, and is received a little over a minute after the request was first sent. This means that it took a little over a minute for the engine to open the app and prepare it for the users to start performing calculations.
 
-![OpenDoc_websocket.png](images/OpenDoc_websocket.png)
+![OpenDoc_websocket.png](images/OpenDoc_websocket_highlighted.png)
 
 This article will focus on analyzing the "OpenDoc" call. Time spent after this call should be treated as general app performance is is a topic of a different article.
 
@@ -55,7 +55,7 @@ To further understand why app open times are slow it is important to find out ex
 
 The engine goes through many stages when a user wants to attach to an app, and some of those stages will depend on whether or not the app is already loaded into memory. The following progress report shows a typical case of a "cold open", where the app has not already been loaded into memory:
 
-![Progress_report_cold_open.png](images/Progress_report_cold_open.png)
+![Progress_report_cold_open.png](images/Progress_report_cold_open_highlighted.png)
 
 Notice how much of the time (about 48 seconds in total) is spent on loading fields and tables. This is the engine reading the QVF, unpacking the data, and building the data structures required to perform calculations on the app. Compare that to the following progress report for the exact same app:
 
@@ -67,12 +67,11 @@ If users complain that apps are sometimes slow to open, then this is the first t
 
 ## Fields-on-the-fly
 A stage in the app open flow that sometimes accidentally starts consuming a considerable amount of time during the app open flow is the fields-on-the-fly generation. Fields-on-the-fly is a performance optimization that greatly improves the time spent on rendering visualizations that use certain library dimensions. You can learn more about this feature here:
-
 [Calculated Fields](https://community.qlik.com/t5/Design/Calculated-Fields/ba-p/1694383)
 
 The feature appears in the progress report as "Pre-generating dimensions" and should typically be just a small percentage of the overall app open time. Fields-on-the-fly (FotF) is a great performance optimization in Qlik Sense, but sometimes the generation of those fields can consume a significant amount of time. Here is an example where the FotF generation consumes more than a minute out of a total of 80 seconds of app open time:
 
-![Progress_report_FotF.png](images/Progress_report_FotF.png)
+![Progress_report_FotF.png](images/Progress_report_FotF_highlighted.png)
 
 In cases like this, the next step would be to look at the master dimensions of the app and move as many of them as possible into the script instead. That would ensure that the cost of creating those fields is dealt with once, during app reload, instead of every time a user opens the app.
 
