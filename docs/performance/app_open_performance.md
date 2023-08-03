@@ -63,7 +63,7 @@ Notice how much of the time (about 48 seconds in total) is spent on loading fiel
 
 Here we can see that the loading of fields and tables are not present. In fact, if we compare line four of the two progress reports, we can see that the first one states "Loading from storage" while the second one reads "Attached to loaded document". This means that the app was alreay loaded into memory when the second connection was performed.
 
-If users complain that apps are sometimes slow to open, then this is the first thing to look for. If it is clear that the loading of fields and tables is the main cause of slow app open times, then implementing some form of pre-caching technique in your environment might be a good option.
+If users complain that apps are sometimes slow to open, then this is the first thing to look for. If it is clear that the loading of fields and tables is the main cause of slow app open times, then implementing some form of pre-caching technique in your environment might be a good option. More information on cache warming can be found here: [Cache Warming](../tooling/cache_warming.md)
 
 ## Fields-on-the-fly
 A stage in the app open flow that sometimes accidentally starts consuming a considerable amount of time during the app open flow is the fields-on-the-fly generation. Fields-on-the-fly is a performance optimization that greatly improves the time spent on rendering visualizations that use certain library dimensions. You can learn more about this feature here:
