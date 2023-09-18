@@ -41,19 +41,19 @@ There are many things to consider when investigate app open performance times. W
 
 |![Opening_the_App.png](images/Opening_the_App.png)|
 |:--:| 
-|*Image 1.0: App opening message*|
+|*Image 1: App opening message*|
 
-A more precise way of analyzing this is to look at the websocket traffic between the client and the engine. The first call the client makes when connecting to the engine is typically to make a request to open a specifc app. The following image shows a case where the call to the method "OpenDoc" is at the very first row of the communication. The response to this call can be found at row four, and is received a little over a minute after the request was first sent. This means that it took a little over a minute for the engine to open the app and prepare it for the users to start performing calculations.
+A more precise way of analyzing this is to look at the websocket traffic between the client and the engine. The first call the client makes when connecting to the engine is typically to make a request to open a specifc app. *Image 2* shows a case where the call to the method "OpenDoc" is at the very first row of the communication. The response to this call can be found at row four, and is received a little over a minute after the request was first sent. This means that it took a little over a minute for the engine to open the app and prepare it for the users to start performing calculations.
 
 |![OpenDoc_websocket.png](images/OpenDoc_websocket_highlighted.png)|
 |:--:| 
-|*Image 2.0: OpenDoc websocket call*|
+|*Image 2: OpenDoc websocket call*|
 
-This article will focus on analyzing the "OpenDoc" call. Time spent after this call should be treated as general app performance is is a topic of a different article.
+This article will focus on analyzing the "OpenDoc" call. Time spent after this call should be treated as general app performance and should be a topic for a different article.
 
 ## Analyzing App Open Performance
 
-To further understand why app open times are slow it is important to find out exactly what part of the app open flow that consumes time. A great tool for analyzing this is the tool [Qlik Explorer for Developers](https://community.qlik.com/t5/Qlik-Sense-Documents/Qlik-Explorer-for-Developers/ta-p/1949809) that has a feature for providing app open progress information. 
+To further understand why app open times are slow it is important to find out exactly what part of the app open flow that consumes time. A great tool for analyzing this is [Qlik Explorer for Developers](https://community.qlik.com/t5/Qlik-Sense-Documents/Qlik-Explorer-for-Developers/ta-p/1949809) that has a feature for providing app open progress information. 
 
 ## Cold vs Warm AppOpen
 
@@ -61,15 +61,15 @@ The engine goes through many stages when a user wants to attach to an app, and s
 
 |![Progress_report_cold_open.png](images/Progress_report_cold_open_highlighted.png)|
 |:--:| 
-|*Image 3.0: App open progress, cold open*|
+|*Image 3.1: App open progress, cold open*|
 
 Notice how much of the time (about 48 seconds in total) is spent on loading fields and tables. This is the engine reading the QVF, unpacking the data, and building the data structures required to perform calculations on the app. Compare that to the following progress report for the exact same app:
 
 |![Progress_report_warm_open.png](images/Progress_report_warm_open.png)|
 |:--:| 
-|*Image 3.1: App open progress, warm open*|
+|*Image 3.2: App open progress, warm open*|
 
-Here we can see that the loading of fields and tables are not present. In fact, if we compare line four of the two progress reports, we can see that the first one states "Loading from storage" while the second one reads "Attached to loaded document". This means that the app was alreay loaded into memory when the second connection was performed.
+Here we can see that the loading of fields and tables are not present. In fact, if we compare line four of the two progress reports, we can see that the one in *Image 3.1* states "Loading from storage" while the one in *Image 3.2* reads "Attached to loaded document". This means that the app was alreay loaded into memory when the second connection was performed.
 
 If users complain that apps are sometimes slow to open, then this is the first thing to look for. If it is clear that the loading of fields and tables is the main cause of slow app open times, then implementing some form of pre-caching technique in your environment might be a good option. More information on cache warming can be found here: [Cache Warming](../tooling/cache_warming.md)
 
@@ -82,7 +82,7 @@ The feature appears in the progress report as "Pre-generating dimensions" and sh
 
 |![Progress_report_FotF.png](images/Progress_report_FotF_highlighted.png)|
 |:--:| 
-|*Image 4.0: Pre generated fields-on-the-fly*|
+|*Image 4: Pre generated fields-on-the-fly*|
 
 In cases like this, the next step would be to look at the master dimensions of the app and move as many of them as possible into the script instead. That would ensure that the cost of creating those fields is dealt with once, during app reload, instead of every time a user opens the app.
 
