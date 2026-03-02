@@ -6,6 +6,12 @@
     {% if page.description %}
     <meta name="Description" content="{{ page.description }}"> {% endif %} {% endif %}
 
+    <style>
+    /* Pushes the theme content down to make room for the banner */
+    .site-header, .side-bar {
+        margin-top: 45px !important; /* Adjust this height to match your banner height */
+    }
+    </style>
     
     <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | absolute_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/bootstrap-select.min.css' | absolute_url }}">
